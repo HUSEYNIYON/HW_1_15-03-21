@@ -25,9 +25,16 @@ namespace HW_1_16_03_21
             double leftSide =  Convert.ToDouble(string.Join("", dirtyText.TakeWhile(t => t != '*' && t != '/' && t != '+' && t != '-').Where(t => int.TryParse(t.ToString(), out leftNumber)).ToArray()));
             double rightSide = Convert.ToDouble(string.Join("", dirtyText.SkipWhile(t => t != '*' && t != '/' && t != '+' && t != '-').Where(t => int.TryParse(t.ToString(), out rightNumber)).ToArray()));
 
-          
+            //Third Dz
+            string camelCase = "loremIpsumDolorSitAmetConsecteturAdipisicingElitNequeCorruptiSintAccusantium" +
+                               "AsperioresCulpaTotamAssumendaDictNatusIlloRemOfficiaSimiliquePossimusNullaAssumendaAd" +
+                               "IsteOdioQuiaDolorAsperioresDolorumExpeditaIdEosLiberoEiusMinusBeataeLabordadfgeumExRepellat?";
+
+            string camelCaseText = string.Join("", camelCase.Select(x => (x.ToString() == x.ToString().ToUpper()) ? " " + x.ToString() : x.ToString()));
+            
             Console.WriteLine(coding);
             Console.WriteLine(decoding);
+            Console.WriteLine(camelCaseText);
             Console.WriteLine(leftSide * rightSide);
         }
     }
